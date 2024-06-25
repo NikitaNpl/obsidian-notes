@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7abcb395791a1c34",
+            "id": "d799f423e2895f0b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Base/Надежность информационной системы.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Base/Надежность информационной системы.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Base/Надежность информационной системы.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -115,7 +115,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               }
             }
           },
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Base/Надежность информационной системы.md"
               }
             }
           }
@@ -133,8 +133,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,13 +145,22 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "7abcb395791a1c34",
+  "active": "d799f423e2895f0b",
   "lastOpenFiles": [
+    "Base/Программные ошибки.md",
+    "Base/Аппаратные сбои.md",
+    "Base/Надежность информационной системы.md",
+    "README.md",
+    "Base/программных ошибки.md",
+    "Base/Удобство использования информационной системы.md",
+    "Base/Разработка высоконагруженных данными приложений.md",
+    "Base/Масштабируемость информационной системы.md",
+    "Templates/Заметка по книге.md",
+    "Base/Надежность.md",
     "Base/Высоконагруженные приложения.md",
     "Daily",
     "Base",
     "Mind/README.md",
-    "README.md",
     "Templates",
     "Files",
     "Mind/Templates",
