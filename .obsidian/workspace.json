@@ -4,31 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "5d86de7b1b41994d",
+        "id": "dd087cb0a6a24497",
         "type": "tabs",
         "children": [
           {
-            "id": "8e0d07e7da254d33",
+            "id": "c5af1ecbf7371c7f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Base/SOLID.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e35d3ca403bf3fde",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Base/Надежность информационной системы.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -97,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Base/SOLID.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Base/SOLID.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Base/SOLID.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -157,11 +137,11 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "8e0d07e7da254d33",
+  "active": "c5af1ecbf7371c7f",
   "lastOpenFiles": [
-    "Templates/Заметка по книге.md",
-    "Base/SOLID.md",
     "Base/Надежность информационной системы.md",
+    "Base/SOLID.md",
+    "Templates/Заметка по книге.md",
     "README.md",
     "Без названия.canvas",
     "Без названия 1.canvas",
