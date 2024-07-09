@@ -11,8 +11,12 @@
             "id": "c5af1ecbf7371c7f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Base/SOLID.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Base/SOLID.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Base/SOLID.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Base/SOLID.md"
+              }
             }
           }
         ]
@@ -139,18 +147,20 @@
   },
   "active": "c5af1ecbf7371c7f",
   "lastOpenFiles": [
-    "Base/Надежность информационной системы.md",
+    "Base/SOLID в REACT.md",
     "Base/SOLID.md",
+    "Base/Масштабируемость информационной системы.md",
+    "Base/Нагрузка на систему.md",
+    "Base/Удобство использования информационной системы.md",
+    "Base/Разработка высоконагруженных данными приложений.md",
+    "Base/Программные ошибки.md",
+    "Base/Надежность информационной системы.md",
+    "языки",
+    "Base/Аппаратные сбои.md",
     "Templates/Заметка по книге.md",
     "README.md",
     "Без названия.canvas",
     "Без названия 1.canvas",
-    "Base/Масштабируемость информационной системы.md",
-    "Base/Программные ошибки.md",
-    "Base/Нагрузка на систему.md",
-    "Base/Разработка высоконагруженных данными приложений.md",
-    "Base/Удобство использования информационной системы.md",
-    "Base/Аппаратные сбои.md",
     "Base/программных ошибки.md",
     "Base/Надежность.md",
     "Base/Высоконагруженные приложения.md",
