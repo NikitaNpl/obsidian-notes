@@ -1,7 +1,6 @@
 # SOLID 2024-07-09
 
 _Теги_: #ПринципыРазработки #Разработка #Масштабируемость #ПО
-
 ## Для чего?
 
 При написании кода, программисту необходимо прибегать к определенным правилам написания кода, чтобы код программы выглядел более лаконично, его было проще масштабировать и поддерживать.
@@ -121,3 +120,198 @@ public class InvoicePersistence {
 ```
 
 Теперь наш структура класса сохраняет рассматриваемый принцип единой ответственности. 
+
+## Open-Closed Principle (O) — принцип открытости-закрытости
+
+Класс должен быть закрыт для изменения, но открыт для расширения. Когда меняется текущее поведение класса, все такие изменения сказываются на всех системах, работающих с данным классом.
+
+Обычно добавление новой функциональности без изменения уже существующего класса достигается путем интерфейсов и абстрактных классов.
+
+### Пример принципа открытости-закрытости
+
+Предположим, нам была задача, чтобы все счета могли сохранятся и в базе данных, и в виде файлов. Просто решение выглядит следующим образом:
+
+```java
+public class InvoicePersistence {
+    Invoice invoice;
+
+    public InvoicePersistence(Invoice invoice) {
+        this.invoice = invoice;
+    }
+
+    public void saveToFile(String filename) {
+        // Creates a file with given name and writes the invoice
+    }
+
+    public void saveToDatabase() {
+        // Saves the invoice to database
+    }
+}
+```
+
+Данный подход некорректный, поскольку при добавлении нового подхода к сохранению информации о счете, нам бы пришлось изменять уже существующий класс, что противоречит принципу открытости-закрытости.
+
+Попробуем решить выявленную проблему через интерфейсы.
+
+```java
+interface InvoicePersistence {
+
+    public void save(Invoice invoice);
+}
+```
+
+```java
+public class DatabasePersistence implements InvoicePersistence {
+
+    @Override
+    public void save(Invoice invoice) {
+        // Save to DB
+    }
+}
+```
+
+```java
+public class FilePersistence implements InvoicePersistence {
+
+    @Override
+    public void save(Invoice invoice) {
+        // Save to file
+    }
+}
+```
+
+Теперь, если нам необходимо добавить новый способ сохранения счета, нам достаточно создать новый класс с имплементацией нашего общего интерфейса.
+
+## Liskov Substitution Principle (L) — принцип подстановки Барбары Лисков
+
+Если в коде заменить *Базовый класс* на его *Наследника*, то программа должна работать по-прежнему корректно, поскольку в *Наследнике* есть все операции, которые были в *Базовом классе*. В *Базовый класс* нужно выносить только общую логику, которую наследники будут реализовывать. 
+
+В случаях, когда *Наследник* не способен выполнить те же действия, что и *Базовый класс*, возникает риск появления ошибок. Если же *Наследник* не удовлетворяет этим требованиям, значит, он сильно отличается от *Базового класса* и нарушает данный принцип.
+
+### Пример принципа подстановки Барбары Лисков
+
+Допустим, у нас есть класс `Invoice`, в котором есть три метода на просмотр остатка на счете, пополнение счета и оплата.
+
+```java
+public class Invoice {
+	public BigDecimal balance(String numberAccount) {
+		// logic
+		return bigDecimal;    
+	}   
+	
+	public void refill(String numberAccount, BigDecimal sum) {
+		//logic    
+	}
+	
+	public void payment(String numberAccount, BigDecimal sum) {
+	//logic    
+	}
+}
+```
+
+По задаче, нам необходимо написать еще два класса: зарплатный счет и депозитный счет, при этом, зараплатный счет должен поддерживать все операции, представленные в базовом классе, а депозитный счет не должен поддерживать проведение оплаты.
+
+```java
+public class SalaryInvoice extends Invoice {
+	@Override
+	public BigDecimal balance(String numberAccount) {
+		//logic
+		return bigDecimal;
+	}
+	
+	@Override
+	public void refill(String numberAccount, BigDecimal sum) {
+		//logic
+	}    
+	
+	@Override
+	public void payment(String numberAccount, BigDecimal sum) {
+		//logic
+	}
+}
+```
+
+```java
+public class DepositInvoice extends Invoice {
+	@Override
+	public BigDecimal balance(String numberAccount) {
+		//logic
+		return bigDecimal;
+	}
+	
+	@Override
+	public void refill(String numberAccount, BigDecimal sum) {
+		//logic
+	}    
+	
+	@Override
+	public void payment(String numberAccount, BigDecimal sum) {
+		throw new UnsopportedOperationException("Operation not supported");
+	}
+}
+```
+
+Если же после этого в коде программы везде, где использовался класс `Invoice` заменить на его *Наследника* `SalaryInvoice`, то программа продолжит работать нормально, поскольку в классе `SalaryInvoice` доступны все операции, что и в *Базовом классе*.
+
+Если же попробуем сделать такое же с классом `DepositInvoice`, то программа начнет в некоторых моментах работать неправильно, поскольку при вызове метода `payment()` будет выбрасываться исключение. Таким образом, мы нарушили принцип подстановки Барбары Лисков.
+
+Для того, чтобы следовать принципу подстановки Барбыры Лисков, необходимо в *Базовом классе* выносить только общую логику, характерную для классов *Наследников*, которые будут ее реализовывать.
+
+```java
+public class Invoice {
+	public BigDecimal balance(String numberAccount) {
+		// logic
+		return bigDecimal;    
+	}   
+	
+	public void refill(String numberAccount, BigDecimal sum) {
+		//logic    
+	}
+}
+```
+
+```java
+public class DepositInvoice extends Invoice {
+	@Override
+	public BigDecimal balance(String numberAccount) {
+		//logic
+		return bigDecimal;
+	}
+	
+	@Override
+	public void refill(String numberAccount, BigDecimal sum) {
+		//logic
+	}    
+}
+```
+
+```java
+public class PaymentInvoice extends Invoice {
+	public void payment(String numberAccount, BigDecimal sum) {
+		//logic
+	}
+}
+```
+
+```java
+public class SalaryInvoice extends PaymentInvoice {
+	@Override
+	public BigDecimal balance(String numberAccount) {
+		//logic
+		return bigDecimal;
+	}
+	
+	@Override
+	public void refill(String numberAccount, BigDecimal sum) {
+		//logic
+	}    
+	
+	@Override
+	public void payment(String numberAccount, BigDecimal sum) {
+		//logic
+	}
+}
+```
+
+В заключении, принцип подстановки Барбары Лисков заключается в правильном использовании наследования.
+
