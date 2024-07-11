@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Base/SOLID.md",
+                "file": "Base/SOLID в REACT.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 320.5
+    "width": 266.5
   },
   "right": {
     "id": "96b921592ff0a664",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Base/SOLID.md",
+                "file": "Base/SOLID в REACT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Base/SOLID.md",
+                "file": "Base/SOLID в REACT.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Base/SOLID.md"
+                "file": "Base/SOLID в REACT.md"
               }
             }
           }
@@ -133,7 +133,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 280.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -147,8 +147,19 @@
   },
   "active": "c5af1ecbf7371c7f",
   "lastOpenFiles": [
-    "Base/SOLID в REACT.md",
     "Base/SOLID.md",
+    "Base/SOLID в REACT.md",
+    "Files/Pasted image 20240711192202.png",
+    "Files/Pasted image 20240711191554.png",
+    "Files/Pasted image 20240711191334.png",
+    "Files/Pasted image 20240711191241.png",
+    "Files/Снимок экрана 2024-07-11 в 19.06.40 1.png",
+    "Files/Снимок экрана 2024-07-11 в 19.06.40.png",
+    "Files/Pasted image 20240711191050.png",
+    "Files/Pasted image 20240711185951.png",
+    "Files",
+    "Pasted image 20240711185735.png",
+    "Pasted image 20240711185722.png",
     "Base/Масштабируемость информационной системы.md",
     "Base/Нагрузка на систему.md",
     "Base/Удобство использования информационной системы.md",
