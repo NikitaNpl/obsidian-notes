@@ -165,7 +165,7 @@ const TodoItem = ({ title }) => (
 ```jsx
 const PasswordInput = () => {
   const [show, setShow] = useState(false);
-  const handleClick = () => setShow(!show)
+  const handleClick = () => setShow(!show);
 
   return (
     <InputGroup size='md'>
@@ -176,7 +176,7 @@ const PasswordInput = () => {
         </Button>
       </InputRightElement>
     </InputGroup>
-  )
+  );
 };
 ```
 
@@ -216,12 +216,18 @@ const RedButton = ({
 );
 
 const LSP = (): JSX.Element => (
-	<>
-        <div className='button-wrapper'>
-          <Button>Click me</Button>
-          <RedButton isRed>Click me</RedButton>
-        </div>
-    </>
-)
+    <div className='button-wrapper'>
+        <Button>Click me</Button>
+        <RedButton isRed>Click me</RedButton>
+    </div>
+);
 ```
 
+## Interface Segregation Principle (I) — принцип разделения интерфейса
+
+Клиенты не должны зависеть от интерфейсов, которые они не используют. Для React-приложений характерно то, что компоненты не должны зависеть от свойств, которые они не используют.
+### Цели принципа разделения интерфейса
+
+- улучшение сопровождения: создавая более мелкие и целенаправленные компоненты, можно легко облегчить понимание и изменение кодовой базы;
+- повышение гибкости: минимизируя зависимости между компонентами, можно легко обеспечить повторное использование компонентов.
+### Пример принципа разделения интерфейса
